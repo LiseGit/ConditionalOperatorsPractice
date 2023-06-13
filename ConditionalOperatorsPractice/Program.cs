@@ -28,14 +28,49 @@ namespace ConditionalOperatorsPractice
             b = DigitInput<decimal>(Console.ReadLine());
 
             Console.WriteLine("Площадь прямоугольного треугольника " + a * b / 2);
+
+            //Task3
+            Console.WriteLine("Задание 3. Калькулятор");
+
+            Console.WriteLine("Введите первое число");
+            a = DigitInput<decimal>(Console.ReadLine());
+
+            Console.WriteLine("Введите второе число");
+            b = DigitInput<decimal>(Console.ReadLine());
+
+            Console.WriteLine("Введите действие (+ - * / %)");
+            var mathOperation = Console.ReadLine();
+
+            switch (mathOperation)
+            {
+                case "+":
+                    Console.WriteLine("Ответ " + (a + b));
+                    break;
+                case "-":
+                    Console.WriteLine("Ответ " + (a - b));
+                    break;
+                case "*":
+                    Console.WriteLine("Ответ " + (a * b));
+                    break;
+                case "/":
+                    Console.WriteLine("Ответ " + (a / b));
+                    break;
+                case "%":
+                    Console.WriteLine("Ответ " + (a % b));
+                    break;
+                default:
+                    Console.WriteLine("Неизвестное математическое действие");
+                    break;
+            }
         }
 
         public static T DigitInput<T>(string input)
         {
-            input = input.Replace('.', ',');
+            input = input.Replace(',', '.');
             var converter = TypeDescriptor.GetConverter(typeof(T));
-            if (converter != null && converter.CanConvertFrom(typeof(string)))
+            if (converter.IsValid(input))
             {
+                input = input.Replace('.', ',');
                 return (T) converter.ConvertFrom(input);
             }
             else
