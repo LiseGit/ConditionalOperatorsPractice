@@ -62,6 +62,14 @@ namespace ConditionalOperatorsPractice
                     Console.WriteLine("Неизвестное математическое действие");
                     break;
             }
+
+            //Task4
+            Console.WriteLine("Задание 4. Программа для проверки совершеннолетия");
+
+            Console.WriteLine("Введите возраст (число полных лет)");
+            var age = DigitInput<int>(Console.ReadLine());
+
+            Console.WriteLine(age<18?"Несовершеннолетний":"Совершеннолетний");
         }
 
         public static T DigitInput<T>(string input)
