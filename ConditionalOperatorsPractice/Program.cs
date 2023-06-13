@@ -17,6 +17,17 @@ namespace ConditionalOperatorsPractice
             var b = DigitInput<decimal>(Console.ReadLine());
 
             Console.WriteLine("Площадь прямоугольника "+ a * b);
+
+            //Task2
+            Console.WriteLine("Задание 2. Подсчёт площади прямоугольного треугольника");
+
+            Console.WriteLine("Введите длину одного катета");
+            a = DigitInput<decimal>(Console.ReadLine());
+
+            Console.WriteLine("Введите длину другого катета");
+            b = DigitInput<decimal>(Console.ReadLine());
+
+            Console.WriteLine("Площадь прямоугольного треугольника " + a * b / 2);
         }
 
         public static T DigitInput<T>(string input)
