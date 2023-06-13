@@ -70,6 +70,33 @@ namespace ConditionalOperatorsPractice
             var age = DigitInput<int>(Console.ReadLine());
 
             Console.WriteLine(age<18?"Несовершеннолетний":"Совершеннолетний");
+
+            //Task5
+            Console.WriteLine("Программа для проверки температуры на улице");
+
+            Console.WriteLine("Введите температуру (по Цельсию)");
+            var temperature = DigitInput<int>(Console.ReadLine());
+
+            switch (temperature)
+            {
+
+                case int n when (n <= 0):
+                    Console.WriteLine("Очень холодно");
+                    break;
+                case int n when (0 < n && n <= 10):
+                    Console.WriteLine("Холодно");
+                    break;
+                case int n when (10 < n && n <= 20):
+                    Console.WriteLine("Нормально");
+                    break;
+                case int n when (20 < n && n <= 30):
+                    Console.WriteLine("Тепло");
+                    break;
+                case int n when (n >30):
+                    Console.WriteLine("Жарко");
+                    break;
+
+            }
         }
 
         public static T DigitInput<T>(string input)
