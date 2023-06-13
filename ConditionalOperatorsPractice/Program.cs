@@ -97,6 +97,40 @@ namespace ConditionalOperatorsPractice
                     break;
 
             }
+
+            //Task6
+            Console.WriteLine("Задание 6. Программа подсчёта времени годаПрограмма подсчёта времени года");
+
+            Console.WriteLine("Введите месяц");
+            var mounth = Console.ReadLine();
+            mounth = mounth.ToLower();
+
+            switch (mounth)
+            {
+                case "декабрь":
+                case "январь":
+                case "февраль":
+                    Console.WriteLine("Зима");
+                    break;
+                case "март":
+                case "апрель":
+                case "май":
+                    Console.WriteLine("Весна");
+                    break;
+                case "июнь":
+                case "июль":
+                case "август":
+                    Console.WriteLine("Лето");
+                    break;
+                case "сентябрь":
+                case "октябрь":
+                case "ноябрь":
+                    Console.WriteLine("Осень");
+                    break;
+                default:
+                    Console.WriteLine("Неверный ввод");
+                    break;
+            }
         }
 
         public static T DigitInput<T>(string input)
